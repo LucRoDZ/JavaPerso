@@ -1,38 +1,31 @@
-# JavaPerso
 package fr.epita.assistants.war;
 
-public class Soldier extends Combatant {
-    protected int healthPoints;
-    protected int damagePoints;
-    protected String scream;
+public class Vehicle extends Combatant {
+    private String modelName;
+    private int defensePoints;
 
-    public Soldier() {
-        this.healthPoints = 15;
-        this.damagePoints = 3;
-        this.scream = "No pity for losers!";
-    }
-
-    public void kill() {
-        this.healthPoints = 0;
+    public Vehicle(String name, int defense) {
+        this.modelName = name;
+        this.defensePoints = defense;
     }
 
     @Override
     public void printState() {
-        System.out.println("I have " + this.healthPoints + " health points.");
+        System.out.println("I have " + this.defensePoints + " defense points.");
     }
 
     @Override
     public void attack(Soldier s) {
-        s.healthPoints -= this.damagePoints;
+        s.kill();
     }
 
     @Override
     public void attack(Vehicle v) {
-        System.out.println("I can't fight this.");
+        v.defensePoints /= 2;
     }
 
     @Override
     public void scream() {
-        System.out.println(this.scream);
+        System.out.println("I'm " + this.modelName + "!");
     }
 }
