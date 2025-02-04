@@ -1,4 +1,9 @@
 package fr.epita.assistants;
+
+import fr.epita.assistants.triad.FixMyMistake;
+import fr.epita.assistants.triad.UglyClass;
+import fr.epita.assistants.triad.WriteGettersAndConstructorForMe;
+
 public class Main {
     public static void main(String[] args) {
         // Use Alt+Enter to import missing classes

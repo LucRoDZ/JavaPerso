@@ -17,7 +17,45 @@ public class WriteGettersAndConstructorForMe {
 
     private final int x;
 
-    public WriteGettersAndConstructorForMe(String name, String firstName, String lastName, String random, String anotherOne, String anotherOne2, String anotherOne3, String xyz, int x, double y, float z, Boolean b, boolean c) {
+    public boolean isC() {
+        return c;
+    }
+
+    public Boolean getB() {
+        return b;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public float getZ() {
+        return z;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public String getXyz() {
+        return xyz;
+    }
+
+    public String getAnotherOne2() {
+        return anotherOne2;
+    }
+
+    public String getAnotherOne3() {
+        return anotherOne3;
+    }
+
+    public WriteGettersAndConstructorForMe(String name, String firstName, String lastName, String random,
+                                           String anotherOne, String anotherOne2, String anotherOne3, String xyz,
+                                           int x, double y, float z, Boolean b, boolean c) {
         this.name = name;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -36,6 +74,22 @@ public class WriteGettersAndConstructorForMe {
     private final double y;
 
     private final float z;
+
+    public String getAnotherOne() {
+        return anotherOne;
+    }
+
+    public String getRandom() {
+        return random;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
 
     private final Boolean b;
 
