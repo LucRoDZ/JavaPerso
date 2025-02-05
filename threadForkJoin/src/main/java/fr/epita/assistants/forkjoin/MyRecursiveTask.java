@@ -24,7 +24,7 @@ public class MyRecursiveTask extends RecursiveTask<Double> {
         int height = yUpperBound - yLowerBound;
 
         if (width <= 5 && height <= 5) {
-            return computeDirectly();
+            return annexe();
         } else {
             int midX = xLowerBound + width / 2;
             int midY = yLowerBound + height / 2;
@@ -44,7 +44,7 @@ public class MyRecursiveTask extends RecursiveTask<Double> {
         }
     }
 
-    private Double computeDirectly() {
+    private Double annexe() {
         double sum = 0;
         int count = 0;
         for (int i = yLowerBound; i < yUpperBound; i++) {
