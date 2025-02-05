@@ -53,6 +53,10 @@ public class MyRecursiveTask extends RecursiveTask<Double> {
                 count++;
             }
         }
-        return count == 0 ? 0 : sum / count;
+        if (count == 0) {
+            return 0.0;
+        } else {
+            return sum / count;
+        }
     }
 }
