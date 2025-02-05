@@ -9,7 +9,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class RecursiveTaskTest {
     @Test
     void exampleTest() {
-        // Create a Matrix
         double[][] matrix = new double[][]{
                 new double[]{10, 52, 100, 50, 74, 25},
                 new double[]{10, 52, 100, 50, 74, 25},
@@ -22,11 +21,9 @@ public class RecursiveTaskTest {
 
         MyRecursiveTask mrt = new MyRecursiveTask(matrix, 0, matrix[0].length, 0, matrix.length);
 
-        // Fork and join task
         mrt.fork();
         double got = mrt.join();
 
-        // Need delta because of 'double' type
         assertEquals(expected, got, 0.01);
     }
 
