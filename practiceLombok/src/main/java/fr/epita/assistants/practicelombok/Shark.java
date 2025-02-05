@@ -2,12 +2,9 @@ package fr.epita.assistants.practicelombok;
 
 import lombok.*;
 
-@RequiredArgsConstructor
-@Getter
-@ToString
-@EqualsAndHashCode
+@Value
 public class Shark {
-    private final String name;
-    private final String nickname;
-    private final int speed;
+    String name;
+    String nickname;
+    int speed;
 }
