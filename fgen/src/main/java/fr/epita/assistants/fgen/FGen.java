@@ -43,12 +43,13 @@ public class FGen {
                     if (path.endsWith("/")) {
                         Files.createDirectories(targetPath);
                     } else {
+                        Files.createDirectories(targetPath.getParent());
                         Files.createFile(targetPath);
                     }
                     break;
                 case '>':
                     if (!Files.exists(targetPath) || !Files.isDirectory(targetPath)) {
-                        throw new RuntimeException("Destinitation inexistante : " + targetPath);
+                        throw new RuntimeException("Destination inexistante : " + targetPath);
                     }
                     currentPath = targetPath;
                     break;
@@ -56,7 +57,7 @@ public class FGen {
                     deleteRecursively(targetPath);
                     break;
                 default:
-                    throw new RuntimeException("commande inexistante: " + opcode);
+                    throw new RuntimeException("Commande inexistante: " + opcode);
             }
         } catch (FileAlreadyExistsException ignored) {
 
@@ -64,6 +65,7 @@ public class FGen {
             throw new RuntimeException("ERREUR exec " + command + " - " + e.getMessage());
         }
     }
+
 
     private void deleteRecursively(Path path) throws IOException {
         if (Files.exists(path)) {
@@ -82,9 +84,5 @@ public class FGen {
                 Files.delete(path);
             }
         }
-    }
-
-    public static void main(String[] args) {
-        new FGen("../resources/example.txt");
     }
 }
