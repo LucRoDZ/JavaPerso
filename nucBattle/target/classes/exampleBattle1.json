@@ -2,7 +2,7 @@
   "NUCs": {
     "xavier.login": {
       "name": "r01p02",
-      "hp": 64.1,
+      "hp": 90.1,
       "installed_programs": [
         "yes",
         "grep",
@@ -13,7 +13,7 @@
     },
     "xavier.login2": {
       "name": "r04p03",
-      "hp": 72.0,
+      "hp": 98.0,
       "installed_programs": [
         "find",
         "cp",
