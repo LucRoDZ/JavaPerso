@@ -1,14 +1,21 @@
 package fr.epita.assistants.drawing;
 
+import lombok.Getter;
+
+@Getter
 public abstract class Entity {
-    private static int SEQUENCE = 0;
-    protected final int id;
+    private static long SEQUENCE = 0;
+    protected final long id;
 
     public Entity() {
         id = ++SEQUENCE;
     }
 
-    public int getId() {
+    long getId() {
+
         return id;
+    }
+
+    void draw() {
     }
 }
