@@ -1,0 +1,9 @@
+/home/lucas/EPITA/JavaPerso/nucBattle/src/main/java/fr/epita/assistants/Main.java
+/home/lucas/EPITA/JavaPerso/nucBattle/src/main/java/fr/epita/assistants/nucbattle/Battle.java
+/home/lucas/EPITA/JavaPerso/nucBattle/src/main/java/fr/epita/assistants/nucbattle/BattleManager.java
+/home/lucas/EPITA/JavaPerso/nucBattle/src/main/java/fr/epita/assistants/nucbattle/Nuc.java
+/home/lucas/EPITA/JavaPerso/nucBattle/src/main/java/fr/epita/assistants/nucbattle/Packet.java
+/home/lucas/EPITA/JavaPerso/nucBattle/src/main/java/fr/epita/assistants/nucbattle/Report.java
+/home/lucas/EPITA/JavaPerso/nucBattle/src/main/java/fr/epita/assistants/nucbattle/ReportType.java
+/home/lucas/EPITA/JavaPerso/nucBattle/src/main/java/fr/epita/assistants/nucbattle/Turn.java
+/home/lucas/EPITA/JavaPerso/nucBattle/src/main/java/fr/epita/assistants/nucbattle/TurnDeserializer.java

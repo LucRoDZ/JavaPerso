@@ -1,0 +1,9 @@
+fr/epita/assistants/nucbattle/Packet.class
+fr/epita/assistants/nucbattle/ReportType.class
+fr/epita/assistants/nucbattle/Nuc.class
+fr/epita/assistants/Main.class
+fr/epita/assistants/nucbattle/Battle.class
+fr/epita/assistants/nucbattle/TurnDeserializer.class
+fr/epita/assistants/nucbattle/BattleManager.class
+fr/epita/assistants/nucbattle/Report.class
+fr/epita/assistants/nucbattle/Turn.class
