@@ -1,13 +1,19 @@
 package fr.epita.assistants.observer;
 
 public class Person {
-    private String name;
+    private final String name;
+    private final int age;
 
-    public Person(String name) {
+    public Person(String name, int age) {
         this.name = name;
+        this.age = age;
     }
 
     public String getName() {
         return name;
+    }
+
+    public int getAge() {
+        return age;
     }
 }
