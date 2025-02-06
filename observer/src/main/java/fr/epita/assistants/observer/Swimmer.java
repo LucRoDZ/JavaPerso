@@ -3,37 +3,32 @@ package fr.epita.assistants.observer;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Swimmer class that extends Person and implements Observable<SwimmerStatus>.
- */
 public class Swimmer extends Person implements Observable<SwimmerStatus> {
 
-    private SwimmerStatus status;
-    // We store our observers in a Set to avoid duplicates
+    // Current status of the swimmer
+    private SwimmerStatus status = SwimmerStatus.OK;
+
+    // A set to hold all observers (e.g., lifeguards)
     private final Set<Observer<SwimmerStatus>> observers = new HashSet<>();
 
-    public Swimmer(String name) {
-        super(name);
-        // By default, let's assume a new Swimmer is OK at the start
-        this.status = SwimmerStatus.OK;
+    public Swimmer(String name, int age) {
+        super(name, age);
+    }
+
+    // Method to update the Swimmer's status
+    public void setStatus(SwimmerStatus newStatus) {
+        this.status = newStatus;
+        // Whenever status changes, notify all observers
+        fire(newStatus);
     }
 
     public SwimmerStatus getStatus() {
         return status;
     }
 
-    /**
-     * Changes the swimmer's status and notifies all observers.
-     */
-    public void setStatus(SwimmerStatus newStatus) {
-        this.status = newStatus;
-        // Fire the event so all observers (e.g., Lifeguards) get notified
-        fire(newStatus);
-    }
-
-    // =================================
-    // Implementation of Observable<SwimmerStatus> methods
-    // =================================
+    // ===================
+    // Observable methods:
+    // ===================
 
     @Override
     public Set<Observer<SwimmerStatus>> getObservers() {
@@ -41,20 +36,21 @@ public class Swimmer extends Person implements Observable<SwimmerStatus> {
     }
 
     @Override
-    public void register(final Observer<SwimmerStatus>... observers) {
-        for (Observer<SwimmerStatus> observer : observers) {
-            this.observers.add(observer);
+    @SafeVarargs
+    public final void register(Observer<SwimmerStatus>... observersToRegister) {
+        for (Observer<SwimmerStatus> observer : observersToRegister) {
+            observers.add(observer);
         }
     }
 
     @Override
-    public void unregister(final Observer<SwimmerStatus> observer) {
-        this.observers.remove(observer);
+    public void unregister(Observer<SwimmerStatus> observer) {
+        observers.remove(observer);
     }
 
     @Override
-    public void fire(final SwimmerStatus event) {
-        // Notify each observer about the new event/status
+    public void fire(SwimmerStatus event) {
+        // Notify all observers about the event
         for (Observer<SwimmerStatus> observer : observers) {
             observer.onEvent(event);
         }
